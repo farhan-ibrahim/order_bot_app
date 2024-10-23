@@ -1,6 +1,12 @@
 # order_bot_app
 
-A new Flutter project.
+An Order Management System built using Flutter Web.
+
+
+
+https://github.com/user-attachments/assets/8645d73e-79b8-4f46-97ea-be6e23f76b7f
+
+
 
 ## Getting Started
 
