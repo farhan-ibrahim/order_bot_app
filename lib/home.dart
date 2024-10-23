@@ -117,18 +117,25 @@ class _HomeWidgetState extends State<HomeWidget> {
         body: Center(
           child: Row(
             children: [
-              ListWidget(list: _queue, title: "PENDING ORDERS"),
               ListWidget(
-                  list: _bots,
-                  title: "IN PROGRESS",
-                  itemBuilder: (Bot bot) {
-                    return BotWidget(
-                      id: bot.id,
-                      order: bot.order,
-                      onCompleteOrder: (order) => _onCompleteOrder(order, bot),
-                    );
-                  }),
-              ListWidget(list: _completedOrders, title: "COMPLETED ORDERS"),
+                list: _queue,
+                title: "PENDING ORDERS",
+              ),
+              ListWidget(
+                list: _bots,
+                title: "IN PROGRESS",
+                itemBuilder: (Bot bot) {
+                  return BotWidget(
+                    id: bot.id,
+                    order: bot.order,
+                    onCompleteOrder: (order) => _onCompleteOrder(order, bot),
+                  );
+                },
+              ),
+              ListWidget(
+                list: _completedOrders,
+                title: "COMPLETED ORDERS",
+              ),
             ],
           ),
         ),

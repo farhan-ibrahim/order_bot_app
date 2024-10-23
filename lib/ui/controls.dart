@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 class Controls extends StatelessWidget {
@@ -33,12 +34,14 @@ class Controls extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FloatingActionButton(
+              key: const Key('add_normal_order'),
               onPressed: addNormalOrderCtrl,
               tooltip: 'Add Normal Order',
               child: const Icon(Icons.add),
             ),
             const SizedBox(width: 8),
             FloatingActionButton(
+              key: const Key('add_vip_order'),
               onPressed: addVipOrderCtrl,
               tooltip: 'Add VIP Order',
               child: const Text(
@@ -64,12 +67,14 @@ class Controls extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             FloatingActionButton(
+              key: const Key('add_bot'),
               onPressed: addBotCtrl,
               tooltip: 'Add Bot',
               child: const Icon(Icons.add),
             ),
             const SizedBox(width: 8),
             FloatingActionButton(
+              key: const Key('remove_bot'),
               onPressed: removeBotCtrl,
               tooltip: 'Remove Bot',
               child: const Icon(Icons.remove),

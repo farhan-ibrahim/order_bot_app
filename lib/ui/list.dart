@@ -33,6 +33,7 @@ class ListWidget<T> extends StatelessWidget {
           const SizedBox(height: 8),
           Expanded(
             child: ListView.builder(
+              key: Key("${title}_list"),
               itemCount: list.length,
               itemBuilder: (context, index) {
                 final item = list[index];

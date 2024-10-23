@@ -23,14 +23,16 @@ class BotWidget extends StatefulWidget {
 }
 
 class _BotWidgetState extends State<BotWidget> {
-  late Timer _timer;
+  late Timer _timer = Timer(const Duration(seconds: 0), () {});
   Order? _order;
   BotStatus _status = BotStatus.idle;
 
   @override
   void initState() {
     super.initState();
-    start(widget.order!);
+    if (widget.order != null) {
+      start(widget.order!);
+    }
   }
 
   @override
@@ -55,7 +57,7 @@ class _BotWidgetState extends State<BotWidget> {
     setState(() {
       _order = newOrder;
       _status = BotStatus.busy;
-      _timer = Timer(const Duration(seconds: 5), () {
+      _timer = Timer(const Duration(seconds: 10), () {
         end(newOrder);
       });
     });
